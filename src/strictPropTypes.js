@@ -40,15 +40,15 @@ export default (Component, userConfiguration) => {
             this.validateProps(this.props);
 
             if (super.componentWillMount) {
-                super.componentWillMount();
+                super.componentWillMount(...arguments);
             }
         }
 
-        componentWillReceiveProps (nextProps) {
+        componentWillReceiveProps (nextProps, nextContext) {
             this.validateProps(nextProps);
 
             if (super.componentWillReceiveProps) {
-                super.componentWillReceiveProps(nextProps);
+                super.componentWillReceiveProps(nextProps, nextContext);
             }
         }
     };
